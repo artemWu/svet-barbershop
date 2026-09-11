@@ -18,7 +18,7 @@ export default function Home() {
           aria-label="Парикмахерская Свет"
         >
           <Image
-            src="/svg/logo.png"
+            src="/svet-barbershop/svg/logo.png"
             alt="Свет, парикмахерская"
             width={600}
             height={600}
@@ -103,7 +103,7 @@ export default function Home() {
             <ServiceCard
               title="Стрижки"
               price="от 3 500 ₽"
-              image="/images/haircut.png"
+              image="/svet-barbershop/images/haircut.png"
               background="beige"
             />
           </Reveal>
@@ -115,7 +115,7 @@ export default function Home() {
             <ServiceCard
               title="Борода"
               price="от 2 000 ₽"
-              image="/images/beard.png"
+              image="/svet-barbershop/images/beard.png"
               background="brown"
             />
           </Reveal>
@@ -127,7 +127,7 @@ export default function Home() {
             <ServiceCard
               title="Уход за лицом"
               price="от 1 800 ₽"
-              image="/images/care.png"
+              image="/svet-barbershop/images/care.png"
               background="gray"
             />
           </Reveal>

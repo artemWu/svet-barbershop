@@ -249,7 +249,7 @@ a {
       #000 0%,
       transparent 24%
     ),
-    url("/images/hero-portrait.png");
+    url("/svet-barbershop/images/hero-portrait.png");
 
   background-position:
     center,
@@ -279,7 +279,7 @@ a {
       #000 0%,
       transparent 24%
     ),
-    url("/images/hero-portrait-2.png");
+    url("/svet-barbershop/images/hero-portrait-2.png");
 }
 
 /* =========================
@@ -1299,7 +1299,7 @@ a {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
     ),
-    url("/images/contacts.jpg");
+    url("/svet-barbershop/images/contacts.jpg");
 
   background-position: center;
   background-size: cover;

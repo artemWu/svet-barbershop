@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer__brand">
 
           <Image
-            src="/svg/logo.png"
+            src="/svet-barbershop/svg/logo.png"
             alt="Свет, парикмахерская"
             width={224}
             height={60}
