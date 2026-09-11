@@ -7,19 +7,19 @@ const team = [
     name: "Артем",
     role: "Сооснователь",
     description: "Краткий текст описывающий Артема и его философию",
-    image: "/images/hero-portrait.png",
+    image: "/svet-barbershop/images/hero-portrait.png",
   },
   {
     name: "Борис",
     role: "Сооснователь",
     description: "Краткий текст описывающий Бориса и его подход к работе",
-    image: "/images/hero-portrait-2.png",
+    image: "/svet-barbershop/images/hero-portrait-2.png",
   },
   {
     name: "Сергей",
     role: "Барбер",
     description: "Краткий текст описывающий Сергея и его стиль",
-    image: "/images/hero-portrait-3.png",
+    image: "/svet-barbershop/images/hero-portrait-3.png",
   },
 ];
 
