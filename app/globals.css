@@ -473,14 +473,23 @@ a {
 
   cursor: pointer;
   overflow: hidden;
+
+  transition:
+    filter 160ms ease,
+    transform 100ms ease;
 }
 
+.button:hover {
+  filter: brightness(0.9);
+}
 
 .button__glass {
   display: flex;
 
   padding: 1px;
   border-radius: 13px;
+
+  transition: transform 100ms ease;
 
   background:
     radial-gradient(
@@ -495,6 +504,10 @@ a {
       rgba(221, 221, 221, 0.4) 50%,
       rgba(221, 221, 221, 0.1) 100%
     );
+}
+
+.button__glass:has(.button:active) {
+  transform: scale(0.95);
 }
 
 .button__text {
