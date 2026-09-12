@@ -249,7 +249,7 @@ a {
       #000 0%,
       transparent 24%
     ),
-    url("/svet-barbershop/images/hero-portrait.png");
+    url("/svet-barbershop/images/hero-portrait.webp");
 
   background-position:
     center,
@@ -279,7 +279,7 @@ a {
       #000 0%,
       transparent 24%
     ),
-    url("/svet-barbershop/images/hero-portrait-2.png");
+    url("/svet-barbershop/images/hero-portrait-2.webp");
 }
 
 /* =========================
@@ -294,10 +294,10 @@ a {
   gap: 24px;
 
   width: 100%;
-  max-width: 402px;
+  max-width: none;
 
   padding-top: 60px;
-  padding-inline: 4px;
+  padding-inline: 0;
 }
 
 .services__title {
@@ -902,9 +902,10 @@ a {
    DESKTOP
 ========================= */
 
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
   .services {
     max-width: 1200px;
+    padding-top: 120px;
   }
 
   .services__list {
@@ -1397,6 +1398,18 @@ a {
   opacity: 0.6;
 }
 
+.contacts-card__phone {
+  color: #dddddd;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+
+  letter-spacing: -0.06em;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
 /* ========================================
    CONTACTS MAP
 ======================================== */
@@ -1828,6 +1841,13 @@ a {
 /* TABLET */
 
 @media (max-width: 900px) {
+  .team-card__description {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
   .reviews-section__list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

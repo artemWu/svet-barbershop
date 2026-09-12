@@ -4,7 +4,7 @@ const reviews = [
     status: "Знаток города 4 уровня",
     date: "31 августа",
     avatar:
-      "https://app.paper.design/file-assets/01M1KCQN8J6RRW6KDE9VW34V9N/0SHKDRDZBGHWX32H2K7TTRHHXJ.png",
+      "/svet-barbershop/images/contacts-1.webp",
     text: "Ребята, просто Цари! За последние годы для меня — это лучшая команда) Им можно сказать сделай красиво — твои ожидания воплотятся в реальность 🔥",
     variant: "review-card--1",
   },
@@ -13,7 +13,7 @@ const reviews = [
     status: "Знаток города 5 уровня",
     date: "28 августа",
     avatar:
-      "https://app.paper.design/file-assets/01M1KCQN8J6RRW6KDE9VW34V9N/0SHKDRDZBGHWX32H2K7TTRHHXJ.png",
+      "/svet-barbershop/images/contacts-2.webp",
     text: "Очень атмосферное место, персонал создает впечатление хорошо знакомых людей, можно пообщаться на различные темы с мастером, что поднимет настроение:) Во время выполнения процедур ты отдыхаешь, а после завершения хочется вернуться снова! Так же есть напитки и конфеты (конфеты классные, спасибо). Внутри помещения уютно и комфортно. По возможности приеду к Вам снова. Спасибо за классную стрижку! Девушка оценила 😁",
     variant: "review-card--2",
   },
@@ -22,7 +22,7 @@ const reviews = [
     status: "Знаток города 5 уровня",
     date: "1 августа",
     avatar:
-      "https://app.paper.design/file-assets/01M1KCQN8J6RRW6KDE9VW34V9N/5GJMDBZ731JVXZH7E20Y2CKZM3.png",
+      "/svet-barbershop/images/contacts-3.webp",
     text: "Отличное место! Стригут настоящие профессионалы, Борис и Артем создали очень крутое пространство, очень хочется возвращаться снова, атмосфера на уровне!",
     variant: "review-card--3",
   },

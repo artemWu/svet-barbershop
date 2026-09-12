@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer__brand">
 
           <Image
-            src="/svet-barbershop/svg/logo.png"
+            src="/svet-barbershop/svg/logo.webp"
             alt="Свет, парикмахерская"
             width={224}
             height={60}
@@ -43,10 +43,10 @@ export default function Footer() {
           </div>
 
           <a
-            href="tel:+79669791100"
+            href="tel:+79857288898"
             className="footer__link"
           >
-            +7 (966) 979-11-00
+            +79857288898
           </a>
 
           <a

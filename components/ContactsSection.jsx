@@ -32,6 +32,13 @@ export default function ContactsSection() {
             <div className="contacts-card__address">
               Большой Полуярославский пер. 10, корп. 2
             </div>
+
+            <a
+              className="contacts-card__phone"
+              href="tel:+79857288898"
+            >
+              +79857288898
+            </a>
           </div>
         </div>
 
