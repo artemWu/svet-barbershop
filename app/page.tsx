@@ -24,6 +24,7 @@ export default function Home() {
             height={600}
             className="hero__logo hero-animate hero-animate--logo"
             priority
+            unoptimized
           />
 
           <div className="location hero-animate hero-animate--location">
