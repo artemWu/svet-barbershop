@@ -1,3 +1,5 @@
+import Button from "./button";
+
 const reviews = [
   {
     name: "Евгений",
@@ -103,6 +105,14 @@ export default function ReviewsSection() {
           </article>
         ))}
       </div>
+
+      <Button
+        href="https://yandex.com/maps/org/svet/68361411731/reviews/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        все отзывы
+      </Button>
     </section>
   );
 }

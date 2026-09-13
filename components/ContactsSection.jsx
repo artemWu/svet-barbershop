@@ -29,9 +29,14 @@ export default function ContactsSection() {
               М. Чкаловская
             </div>
 
-            <div className="contacts-card__address">
+            <a
+              className="contacts-card__address"
+              href="https://yandex.com/maps/org/svet/68361411731/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Большой Полуярославский пер. 10, корп. 2
-            </div>
+            </a>
 
             <a
               className="contacts-card__phone"

@@ -145,14 +145,14 @@ export default function Home() {
         <ReviewsSection />
       </Reveal>
 
-      {/* BOOKING */}
-      <Reveal y={18}>
-        <BookingSection />
-      </Reveal>
-
       {/* CONTACTS */}
       <Reveal y={28}>
         <ContactsSection />
+      </Reveal>
+
+      {/* BOOKING */}
+      <Reveal y={18}>
+        <BookingSection />
       </Reveal>
 
     </main>

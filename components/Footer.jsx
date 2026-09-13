@@ -51,7 +51,9 @@ export default function Footer() {
           </a>
 
           <a
-            href="#contacts"
+            href="https://yandex.com/maps/org/svet/68361411731/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="footer__link footer__link--address"
           >
             г. Москва, Большой Полуярославский пер. 10, корп. 2
