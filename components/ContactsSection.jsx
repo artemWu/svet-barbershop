@@ -40,9 +40,9 @@ export default function ContactsSection() {
 
             <a
               className="contacts-card__phone"
-              href="tel:+79857288898"
+              href="tel:+79669791100"
             >
-              +79857288898
+              +7 (966) 979-11-00
             </a>
           </div>
         </div>

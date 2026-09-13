@@ -11,6 +11,47 @@ import Reveal from "../components/Reveal";
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HairSalon",
+            name: "Свет",
+            description:
+              "Парикмахерская «Свет» в Москве, рядом с метро Курская и Чкаловская.",
+            telephone: "+7 (966) 979-11-00",
+            url: "https://artemwu.github.io/svet-barbershop/",
+            image:
+              "https://artemwu.github.io/svet-barbershop/images/hero-portrait.webp",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Большой Полуярославский пер. 10, корп. 2",
+              addressLocality: "Москва",
+              addressCountry: "RU",
+            },
+            openingHoursSpecification: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday",
+              ],
+              opens: "10:00",
+              closes: "22:00",
+            },
+            makesOffer: [
+              { "@type": "Offer", name: "Стрижки" },
+              { "@type": "Offer", name: "Борода" },
+              { "@type": "Offer", name: "Уход за лицом" },
+            ],
+          }),
+        }}
+      />
       {/* HERO */}
       <section className="hero" id="top">
         <div

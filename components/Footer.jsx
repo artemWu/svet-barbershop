@@ -44,10 +44,10 @@ export default function Footer() {
           </div>
 
           <a
-            href="tel:+79857288898"
+            href="tel:+79669791100"
             className="footer__link"
           >
-            +79857288898
+            +7 (966) 979-11-00
           </a>
 
           <a
