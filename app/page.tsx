@@ -18,7 +18,7 @@ export default function Home() {
           aria-label="Парикмахерская Свет"
         >
           <Image
-            src="/svet-barbershop/svg/logo.webp"
+            src="/svet-barbershop/svg/logo.png"
             alt="Свет, парикмахерская"
             width={600}
             height={600}

@@ -811,6 +811,23 @@ a {
   opacity: 1;
 }
 
+@keyframes team-swipe-hint {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-16px);
+  }
+}
+
+@media (max-width: 899px) {
+  .team-slide--swipe-hint {
+    animation: team-swipe-hint 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
 @media (min-width: 900px) {
   .team-section,
   .team-stage,
@@ -966,6 +983,12 @@ a {
 }
 
 @media (min-width: 900px) {
+  .hero__content {
+    min-height: 100svh;
+    justify-content: center;
+    padding-top: 0;
+  }
+
   .hero__portraits {
     width: min(calc(100% - 32px), 1200px);
   }

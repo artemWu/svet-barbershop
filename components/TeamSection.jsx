@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const team = [
   {
@@ -12,17 +12,24 @@ const team = [
   },
   {
     name: "Артем",
-    role: "Мужской мастер",
+    role: "Сооснователь",
     description:
       "Мужской мастер с опытом работы более 6 лет, часть из которых — работа преподавателем и на съёмочных площадках. Любовь к своему делу — это магия, которая преображает обычные моменты в незабываемые и вдохновляющие.",
     image: "/svet-barbershop/images/hero-portrait.webp",
   },
   {
     name: "Борис",
-    role: "Мужской мастер",
+    role: "Сооснователь",
     description:
       "Мужской мастер более 7 лет: за плечами работа преподавателем, съёмки популярных шоу и проектов. Ему нравится погружать человека в процесс, а не просто стричь — истина приходит в диалоге с гостями.",
     image: "/svet-barbershop/images/hero-portrait-2.webp",
+  },
+  {
+    name: "Олеся",
+    role: "Администратор",
+    description:
+      "Олеся встречает гостей, помогает с записью и заботится о том, чтобы каждый визит в «Свет» начинался с комфортной и тёплой атмосферы.",
+    image: "/svet-barbershop/images/hero-portrait-4.png",
   },
 ];
 
@@ -38,7 +45,12 @@ export default function TeamSection() {
 
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState(0);
+  const [isSwipeHintActive, setIsSwipeHintActive] = useState(false);
 
+  const sectionRef = useRef(null);
+  const hintTimerRef = useRef(null);
+  const hintHasRunRef = useRef(false);
+  const hintCancelledRef = useRef(false);
   const startPositionRef = useRef(0);
   const verticalDragRef = useRef(false);
   const pointerIdRef = useRef(null);
@@ -46,6 +58,55 @@ export default function TeamSection() {
   const activeMember = team[activeIndex];
   const incomingMember =
     nextIndex !== null ? team[nextIndex] : null;
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    const mobileQuery = window.matchMedia("(max-width: 899px)");
+    const reducedMotionQuery = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    if (!mobileQuery.matches || reducedMotionQuery.matches) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (
+          !entry.isIntersecting ||
+          entry.intersectionRatio < 0.55 ||
+          hintHasRunRef.current ||
+          hintCancelledRef.current
+        ) {
+          return;
+        }
+
+        hintHasRunRef.current = true;
+        hintTimerRef.current = window.setTimeout(() => {
+          if (!hintCancelledRef.current) {
+            setIsSwipeHintActive(true);
+          }
+        }, 400);
+        observer.disconnect();
+      },
+      { threshold: [0.55] }
+    );
+
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(hintTimerRef.current);
+    };
+  }, []);
+
+  function cancelSwipeHint() {
+    hintCancelledRef.current = true;
+    window.clearTimeout(hintTimerRef.current);
+    setIsSwipeHintActive(false);
+  }
 
   function changeSlide(newIndex, newDirection) {
     if (isAnimating || newIndex === activeIndex) return;
@@ -84,6 +145,7 @@ export default function TeamSection() {
   }
 
   function handlePointerDown(event) {
+    cancelSwipeHint();
     if (isAnimating || pointerIdRef.current !== null || !event.isPrimary) return;
     if (event.pointerType === "mouse" && event.button !== 0) return;
 
@@ -156,7 +218,7 @@ export default function TeamSection() {
   );
 
   return (
-    <section className="team-section" id="team">
+    <section ref={sectionRef} className="team-section" id="team">
       <div className="team-section__eyebrow">
         Команда
       </div>
@@ -179,6 +241,7 @@ export default function TeamSection() {
           className={[
             "team-slide",
             "team-slide--current",
+            isSwipeHintActive ? "team-slide--swipe-hint" : "",
             isAnimating
               ? direction === "next"
                 ? "team-slide--exit-left"
