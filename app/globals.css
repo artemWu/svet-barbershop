@@ -44,6 +44,7 @@ a {
   isolation: isolate;
   width: 100%;
   min-height: 100svh;
+  min-height: 100dvh;
   overflow: hidden;
 
   background:
@@ -265,7 +266,7 @@ a {
       #000 0%,
       transparent 24%
     ),
-    url("/svet-barbershop/images/hero-portrait.webp");
+    url("/images/hero-portrait.webp");
 
   background-position:
     center,
@@ -295,7 +296,7 @@ a {
       #000 0%,
       transparent 24%
     ),
-    url("/svet-barbershop/images/hero-portrait-2.webp");
+    url("/images/hero-portrait-2.webp");
 }
 
 /* =========================
@@ -1059,8 +1060,6 @@ a {
   .hero {
     width: 100vw;
     margin-left: calc(50% - 50vw);
-
-    min-height: 760px;
   }
 
   .hero__content {
@@ -1084,7 +1083,7 @@ a {
 
 @media (min-width: 900px) {
   .site-header {
-    position: fixed;
+    position: absolute;
     z-index: 100;
     top: 16px;
     left: 50%;
@@ -1097,7 +1096,6 @@ a {
     min-height: 68px;
 
     transform: translateX(-50%);
-    transition: transform 100ms ease;
   }
 
   .site-header__logo {
@@ -1117,49 +1115,14 @@ a {
   }
 
   .site-header__nav-shell {
-    position: relative;
-    isolation: isolate;
-
     display: flex;
     align-items: center;
     gap: 36px;
 
     padding: 12px 28px;
-    border-radius: 12px;
-    transition: transform 100ms ease;
-
-    background:
-      radial-gradient(
-        21.44% 86.72% at 100% 100%,
-        rgba(221, 221, 221, 0.32) 0%,
-        rgba(221, 221, 221, 0.32) 50%,
-        rgba(221, 221, 221, 0) 100%
-      ),
-      radial-gradient(
-        25.16% 101.75% at 0% 0%,
-        rgba(221, 221, 221, 0.32) 0%,
-        rgba(221, 221, 221, 0.32) 50%,
-        rgba(221, 221, 221, 0) 100%
-      );
-  }
-
-  .site-header__nav-shell::before {
-    content: "";
-
-    position: absolute;
-    z-index: -1;
-    inset: 1px;
-
-    border-radius: 11px;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
   }
 
   .site-header__nav-shell a {
-    position: relative;
-    z-index: 1;
-
     display: inline-block;
 
     color: #838383;
@@ -1179,10 +1142,6 @@ a {
   .site-header__nav-shell a:hover,
   .site-header__nav-shell a:focus-visible {
     color: #fff;
-  }
-
-  .site-header > .button__glass {
-    justify-self: end;
   }
 
   .hero__content {
@@ -1542,7 +1501,7 @@ a {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
     ),
-    url("/svet-barbershop/images/contacts.jpg");
+    url("/images/contacts.jpg");
 
   background-position: center;
   background-size: cover;

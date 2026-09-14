@@ -7,7 +7,6 @@ import BookingSection from "../components/BookingSection";
 import ContactsSection from "../components/ContactsSection";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
-import Button from "../components/button";
 
 export default function Home() {
   return (
@@ -22,9 +21,9 @@ export default function Home() {
             description:
               "Парикмахерская «Свет» в Москве, рядом с метро Курская и Чкаловская.",
             telephone: "+7 (966) 979-11-00",
-            url: "https://artemwu.github.io/svet-barbershop/",
+            url: "https://svethair.ru/",
             image:
-              "https://artemwu.github.io/svet-barbershop/images/hero-portrait.webp",
+              "https://svethair.ru/images/hero-portrait.webp",
             address: {
               "@type": "PostalAddress",
               streetAddress: "Большой Полуярославский пер. 10, корп. 2",
@@ -54,10 +53,12 @@ export default function Home() {
         }}
       />
       <main>
+      {/* HERO */}
+      <section className="hero" id="top">
         <header className="site-header" aria-label="Основная навигация">
           <a className="site-header__logo" href="#top" aria-label="Свет — наверх">
             <Image
-              src="/svet-barbershop/svg/mini-logo.png"
+              src="/svg/mini-logo.png"
               alt="Свет"
               width={48}
               height={41}
@@ -66,31 +67,20 @@ export default function Home() {
             />
           </a>
 
-          <nav className="site-header__nav-shell button__glass button__glass--dark">
+          <nav className="site-header__nav-shell">
             <a href="#services">Услуги</a>
             <a href="#team">Команда</a>
             <a href="#reviews">Нам доверяют</a>
             <a href="#contacts">Контакты</a>
           </nav>
-
-          <Button
-            href="https://n365899.yclients.com/company/348811/personal/menu?o="
-            target="_blank"
-            rel="noopener noreferrer"
-            theme="dark"
-          >
-            Записаться
-          </Button>
         </header>
 
-      {/* HERO */}
-      <section className="hero" id="top">
         <div
           className="hero__content"
           aria-label="Парикмахерская Свет"
         >
           <Image
-            src="/svet-barbershop/svg/logo.png"
+            src="/svg/logo.png"
             alt="Свет, парикмахерская"
             width={600}
             height={600}
@@ -179,7 +169,7 @@ export default function Home() {
             <ServiceCard
               title="Стрижки"
               price="от 3 500 ₽"
-              image="/svet-barbershop/images/haircut.webp"
+              image="/images/haircut.webp"
               background="beige"
             />
           </Reveal>
@@ -191,7 +181,7 @@ export default function Home() {
             <ServiceCard
               title="Борода"
               price="от 2 000 ₽"
-              image="/svet-barbershop/images/beard.webp"
+              image="/images/beard.webp"
               background="brown"
             />
           </Reveal>
@@ -203,7 +193,7 @@ export default function Home() {
             <ServiceCard
               title="Уход за лицом"
               price="от 1 800 ₽"
-              image="/svet-barbershop/images/care.webp"
+              image="/images/care.webp"
               background="gray"
             />
           </Reveal>

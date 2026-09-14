@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://artemwu.github.io/svet-barbershop/"),
+  metadataBase: new URL("https://svethair.ru/"),
+  alternates: {
+    canonical: "https://svethair.ru/",
+  },
   title: "Свет — парикмахерская у метро Курская и Чкаловская",
   description:
     "Парикмахерская «Свет» в Москве, рядом с метро Курская и Чкаловская. Стрижки, уход за бородой и лицом. Запись онлайн.",
@@ -11,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "Парикмахерская «Свет» в Москве, рядом с метро Курская и Чкаловская. Стрижки, уход за бородой и лицом. Запись онлайн.",
     type: "website",
-    url: "https://artemwu.github.io/svet-barbershop/",
+    url: "https://svethair.ru/",
     images: [
       {
         url: "/og-image.png",
@@ -32,8 +35,8 @@ export const metadata: Metadata = {
     "codex-preview": "development",
   },
   icons: {
-    icon: "/svet-barbershop/favicon.png",
-    shortcut: "/svet-barbershop/favicon.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
   },
 };
 
