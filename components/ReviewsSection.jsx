@@ -49,9 +49,9 @@ function Star() {
 export default function ReviewsSection() {
   return (
     <section className="reviews-section" id="reviews">
-      <div className="reviews-section__title">
+      <h2 className="reviews-section__title">
         Нам доверяют
-      </div>
+      </h2>
 
       <div className="reviews-section__list">
         {reviews.map((review) => (
@@ -110,6 +110,7 @@ export default function ReviewsSection() {
         href="https://yandex.com/maps/org/svet/68361411731/reviews/"
         target="_blank"
         rel="noopener noreferrer"
+        theme="dark"
       >
         все отзывы
       </Button>

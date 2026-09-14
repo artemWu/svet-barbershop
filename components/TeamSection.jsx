@@ -219,9 +219,9 @@ export default function TeamSection() {
 
   return (
     <section ref={sectionRef} className="team-section" id="team">
-      <div className="team-section__eyebrow">
+      <h2 className="team-section__eyebrow">
         Команда
-      </div>
+      </h2>
 
       <div className="team-stage">
       <div
@@ -241,7 +241,6 @@ export default function TeamSection() {
           className={[
             "team-slide",
             "team-slide--current",
-            isSwipeHintActive ? "team-slide--swipe-hint" : "",
             isAnimating
               ? direction === "next"
                 ? "team-slide--exit-left"
@@ -268,6 +267,14 @@ export default function TeamSection() {
           />
 
           <div className="team-card__fade" />
+
+          {isSwipeHintActive && (
+            <div className="team-gesture-hint" aria-hidden="true">
+              <div className="team-gesture-hint__track">
+                <div className="team-gesture-hint__dot" />
+              </div>
+            </div>
+          )}
 
           <div className="team-card__content">
             <div className="team-card__person">

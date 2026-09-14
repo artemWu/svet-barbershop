@@ -7,6 +7,7 @@ import BookingSection from "../components/BookingSection";
 import ContactsSection from "../components/ContactsSection";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
+import Button from "../components/button";
 
 export default function Home() {
   return (
@@ -52,6 +53,35 @@ export default function Home() {
           }),
         }}
       />
+      <main>
+        <header className="site-header" aria-label="Основная навигация">
+          <a className="site-header__logo" href="#top" aria-label="Свет — наверх">
+            <Image
+              src="/svet-barbershop/svg/mini-logo.png"
+              alt="Свет"
+              width={48}
+              height={41}
+              priority
+            />
+          </a>
+
+          <nav className="site-header__nav-shell button__glass button__glass--dark">
+            <a href="#services">Услуги</a>
+            <a href="#team">Команда</a>
+            <a href="#reviews">Нам доверяют</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+
+          <Button
+            href="https://n365899.yclients.com/company/348811/personal/menu?o="
+            target="_blank"
+            rel="noopener noreferrer"
+            theme="dark"
+          >
+            Записаться
+          </Button>
+        </header>
+
       {/* HERO */}
       <section className="hero" id="top">
         <div
@@ -68,9 +98,13 @@ export default function Home() {
             unoptimized
           />
 
+          <h1 className="hero__title hero-animate hero-animate--location">
+            Парикмахерская «Свет» в Москве
+          </h1>
+
           <div className="location hero-animate hero-animate--location">
             <p className="location__station">
-              Чкаловская
+              Курская · Чкаловская
             </p>
 
             <p className="location__hours">
@@ -125,17 +159,16 @@ export default function Home() {
         </div>
       </section>
 
-    <main>
       {/* SERVICES */}
       <section
         className="services"
         id="services"
       >
-        <div className="services__title">
+        <h2 className="services__title">
           <Reveal y={12}>
             <span>Услуги</span>
           </Reveal>
-        </div>
+        </h2>
 
         <div className="services__list">
           <Reveal

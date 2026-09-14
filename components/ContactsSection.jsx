@@ -1,9 +1,9 @@
 export default function ContactsSection() {
   return (
     <section className="contacts-section" id="contacts">
-      <div className="contacts-section__title">
+      <h2 className="contacts-section__title">
         Контакты
-      </div>
+      </h2>
 
       <div className="contacts-section__content">
 
