@@ -168,7 +168,7 @@ export default function Home() {
           >
             <ServiceCard
               title="Стрижки"
-              price="от 3 500 ₽"
+              price="от 2 500 ₽"
               image="/images/haircut.webp"
               background="beige"
             />
@@ -179,7 +179,7 @@ export default function Home() {
             y={24}
           >
             <ServiceCard
-              title="Борода"
+              title="Моделирование"
               price="от 2 000 ₽"
               image="/images/beard.webp"
               background="brown"
@@ -192,7 +192,7 @@ export default function Home() {
           >
             <ServiceCard
               title="Уход за лицом"
-              price="от 1 800 ₽"
+              price="от 1 000 ₽"
               image="/images/care.webp"
               background="gray"
             />
