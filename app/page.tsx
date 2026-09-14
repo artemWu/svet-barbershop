@@ -57,7 +57,7 @@ export default function Home() {
         <header className="site-header" aria-label="Основная навигация">
           <a className="site-header__logo" href="#top" aria-label="Свет — наверх">
             <Image
-              src="/svet-barbershop/svg/mini-logo.png"
+              src="/svg/mini-logo.png"
               alt="Свет"
               width={48}
               height={41}
