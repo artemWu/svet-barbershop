@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "https://svethair.ru/",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://svethair.ru/og-image.png",
         width: 1200,
         height: 630,
         alt: "Свет — парикмахерская у метро Курская и Чкаловская",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Свет — парикмахерская у метро Курская и Чкаловская",
     description:
       "Парикмахерская «Свет» в Москве, рядом с метро Курская и Чкаловская. Стрижки, уход за бородой и лицом. Запись онлайн.",
-    images: ["/og-image.png"],
+    images: ["https://svethair.ru/og-image.png"],
   },
   other: {
     "codex-preview": "development",
