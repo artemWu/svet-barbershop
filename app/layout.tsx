@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://svethair.ru/",
   },
+  verification: {
+    other: {
+      "yandex-verification": "759809d35ffa0872",
+    },
+  },
   title: "Свет — парикмахерская у метро Курская и Чкаловская",
   description:
     "Парикмахерская «Свет» в Москве, рядом с метро Курская и Чкаловская. Стрижки, уход за бородой и лицом. Запись онлайн.",
