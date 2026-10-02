@@ -75,6 +75,230 @@ a {
 }
 
 /* =========================
+   PRIVACY PAGE
+========================= */
+
+.privacy-page {
+  min-height: 100svh;
+  background: #020202;
+  color: #e4dfda;
+}
+
+/* =========================
+   COOKIE POPUP
+========================= */
+
+.cookie-popup {
+  position: fixed;
+  z-index: 100;
+  right: 20px;
+  bottom: 16px;
+  left: auto;
+  width: min(430px, calc(100vw - 40px));
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  padding: 16px;
+  border: 0;
+  border-radius: 16px;
+  background: rgba(7, 7, 7, .72);
+  isolation: isolate;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: auto;
+  animation: cookie-popup-in 600ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.cookie-popup::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  padding: .5px;
+  border-radius: inherit;
+  background:
+    radial-gradient(
+      45% 65% at 12% 8%,
+      rgb(253 247 236 / .7) 0%,
+      rgb(253 247 236 / .32) 45%,
+      transparent 100%
+    ),
+    radial-gradient(
+      45% 65% at 88% 92%,
+      rgb(253 247 236 / .55) 0%,
+      rgb(253 247 236 / .25) 45%,
+      transparent 100%
+    ),
+    #fdf7ec1f;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.cookie-popup > * {
+  position: relative;
+  z-index: 1;
+}
+
+.cookie-popup__content {
+  min-width: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.cookie-popup__title,
+.cookie-popup__text {
+  margin: 0;
+}
+
+.cookie-popup__title {
+  color: #f2ebe4;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cookie-popup__text {
+  max-width: 680px;
+  margin-top: 6px;
+  color: rgba(228, 223, 218, .64);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.cookie-popup__actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.cookie-popup__link {
+  color: rgba(228, 223, 218, .7);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.cookie-popup__link:hover {
+  color: #f2ebe4;
+}
+
+.cookie-popup__button {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 7px;
+  background: #e4dfda;
+  color: #171513;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.cookie-popup__button:hover {
+  opacity: .86;
+}
+
+.cookie-popup__button:active {
+  transform: scale(.97);
+}
+
+@keyframes cookie-popup-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .cookie-popup {
+    right: 12px;
+    bottom: 12px;
+    width: calc(100vw - 24px);
+    padding: 16px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cookie-popup {
+    animation: none;
+  }
+}
+
+.privacy-page__header {
+  display: none;
+}
+
+.privacy-page__main {
+  padding: 44px 20px 120px;
+}
+
+.privacy-document {
+  width: min(100%, 780px);
+  margin: 0 auto;
+}
+
+.privacy-document h1 {
+  margin: 0;
+  color: #f2ebe4;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 300;
+  line-height: .98;
+  letter-spacing: -.04em;
+}
+
+.privacy-document__subtitle {
+  margin: 14px 0 56px;
+  color: #a29588;
+  font-size: 13px;
+}
+
+.privacy-document__section {
+  margin-top: 48px;
+}
+
+.privacy-document__section h2 {
+  margin: 0 0 20px;
+  color: #f2ebe4;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.privacy-document__section p {
+  margin: 0 0 16px;
+  color: rgba(228, 223, 218, .72);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  .privacy-page__header {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    width: min(100%, 1200px);
+    margin: 0 auto;
+    padding: 28px 24px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .privacy-page__main {
+    padding: 100px 24px 140px;
+  }
+
+  .privacy-document__section p {
+    font-size: 14px;
+  }
+}
+
+/* =========================
    BRAND
 ========================= */
 

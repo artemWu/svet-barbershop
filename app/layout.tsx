@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import CookiePopup from "@/components/CookiePopup";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://svethair.ru/"),
@@ -52,7 +53,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <CookiePopup />
+      </body>
     </html>
   );
 }

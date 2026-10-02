@@ -70,7 +70,7 @@ export default function Footer() {
             Публичная оферта
           </a>
 
-          <a href="#" className="footer__link">
+          <a href="/privacy" className="footer__link">
             Политика конфиденциальности
           </a>
         </div>
