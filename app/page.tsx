@@ -7,6 +7,7 @@ import BookingSection from "../components/BookingSection";
 import ContactsSection from "../components/ContactsSection";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
+import Button from "../components/button";
 
 export default function Home() {
   return (
@@ -52,29 +53,28 @@ export default function Home() {
           }),
         }}
       />
+      <header className="site-header" aria-label="Основная навигация">
+        <a className="site-header__logo" href="#top" aria-label="Свет — наверх">
+          <Image
+            src="/svg/mini-logo.png"
+            alt="Свет"
+            width={48}
+            height={41}
+            priority
+            unoptimized
+          />
+        </a>
+
+        <nav className="site-header__nav-shell">
+          <a href="#services">Услуги</a>
+          <a href="#team">Команда</a>
+          <a href="#reviews">Нам доверяют</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+      </header>
       <main>
       {/* HERO */}
       <section className="hero" id="top">
-        <header className="site-header" aria-label="Основная навигация">
-          <a className="site-header__logo" href="#top" aria-label="Свет — наверх">
-            <Image
-              src="/svg/mini-logo.png"
-              alt="Свет"
-              width={48}
-              height={41}
-              priority
-              unoptimized
-            />
-          </a>
-
-          <nav className="site-header__nav-shell">
-            <a href="#services">Услуги</a>
-            <a href="#team">Команда</a>
-            <a href="#reviews">Нам доверяют</a>
-            <a href="#contacts">Контакты</a>
-          </nav>
-        </header>
-
         <div
           className="hero__content"
           aria-label="Парикмахерская Свет"
@@ -198,6 +198,15 @@ export default function Home() {
             />
           </Reveal>
         </div>
+
+        <Button
+          href="https://n365899.yclients.com/company/348811/personal/select-services?o="
+          target="_blank"
+          rel="noopener noreferrer"
+          theme="dark"
+        >
+          все услуги
+        </Button>
       </section>
 
       {/* TEAM */}

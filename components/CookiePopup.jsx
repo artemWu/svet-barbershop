@@ -26,10 +26,10 @@ export default function CookiePopup() {
   return (
     <aside className="cookie-popup" role="dialog" aria-label="Уведомление о cookies">
       <div className="cookie-popup__content">
-        <p className="cookie-popup__title">Мы используем cookies</p>
+        <p className="cookie-popup__title">Чтобы сайт работал лучше</p>
         <p className="cookie-popup__text">
-          Они помогают сайту работать корректно и делают его удобнее. Продолжая
-          пользоваться сайтом, вы соглашаетесь с использованием cookies.
+          Мы используем cookies, чтобы сайт работал удобнее. Продолжая пользоваться
+          сайтом, вы соглашаетесь с их использованием.
         </p>
       </div>
 

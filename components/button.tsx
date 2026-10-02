@@ -13,32 +13,19 @@ export default function Button({
   rel,
   theme = "default",
 }: ButtonProps) {
-  const wrapperClassName = `button__glass${theme === "dark" ? " button__glass--dark" : ""}`;
+  const buttonClassName = `button button--glass${theme === "dark" ? " button--dark" : ""}`;
 
   if (href) {
     return (
-      <div className={wrapperClassName}>
-        <a
-          className="button"
-          href={href}
-          target={target}
-          rel={rel}
-        >
-          <span className="button__text">
-            {children}
-          </span>
-        </a>
-      </div>
+      <a className={buttonClassName} href={href} target={target} rel={rel}>
+        <span className="button__text">{children}</span>
+      </a>
     );
   }
 
   return (
-    <div className={wrapperClassName}>
-      <button className="button" type="button">
-        <span className="button__text">
-          {children}
-        </span>
-      </button>
-    </div>
+    <button className={buttonClassName} type="button">
+      <span className="button__text">{children}</span>
+    </button>
   );
 }

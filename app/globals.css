@@ -74,6 +74,37 @@ a {
   display: none;
 }
 
+@media (max-width: 899px) {
+  .site-header {
+    position: fixed;
+    z-index: 1000;
+    top: max(12px, env(safe-area-inset-top));
+    left: 8px;
+    display: flex;
+    align-items: center;
+    width: 48px;
+    height: 42px;
+  }
+
+  .site-header__logo {
+    display: inline-flex;
+    align-items: center;
+    width: 48px;
+    height: 42px;
+  }
+
+  .site-header__logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .site-header__nav-shell {
+    display: none;
+  }
+}
+
 /* =========================
    PRIVACY PAGE
 ========================= */
@@ -233,13 +264,65 @@ a {
   display: none;
 }
 
+@media (max-width: 899px) {
+  .privacy-page__header {
+    position: fixed;
+    z-index: 1000;
+    top: max(12px, env(safe-area-inset-top));
+    left: 8px;
+    display: flex;
+    align-items: center;
+    width: 48px;
+    height: 42px;
+    padding: 0;
+  }
+}
+
 .privacy-page__main {
-  padding: 44px 20px 120px;
+  padding: 100px 20px 120px;
 }
 
 .privacy-document {
   width: min(100%, 780px);
   margin: 0 auto;
+}
+
+.privacy-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 850ms cubic-bezier(.22, 1, .36, 1), transform 850ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.privacy-reveal--visible {
+  opacity: 1;
+  transform: none;
+}
+
+.privacy-reveal .privacy-document__intro,
+.privacy-reveal .privacy-document__section {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 700ms cubic-bezier(.22, 1, .36, 1), transform 700ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.privacy-reveal--visible .privacy-document__intro,
+.privacy-reveal--visible .privacy-document__section {
+  opacity: 1;
+  transform: none;
+}
+
+.privacy-reveal--visible .privacy-document__section {
+  transition-delay: var(--privacy-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .privacy-reveal,
+  .privacy-reveal .privacy-document__intro,
+  .privacy-reveal .privacy-document__section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .privacy-document h1 {
@@ -290,7 +373,7 @@ a {
   }
 
   .privacy-page__main {
-    padding: 100px 24px 140px;
+    padding: 160px 24px 140px;
   }
 
   .privacy-document__section p {
@@ -721,6 +804,8 @@ a {
 ========================= */
 
 .button {
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -741,7 +826,7 @@ a {
     transform 100ms ease;
 }
 
-.button__glass--dark .button {
+.button--dark {
   background-color: #000;
 }
 
@@ -749,30 +834,52 @@ a {
   filter: brightness(0.9);
 }
 
-.button__glass {
-  display: flex;
-
-  padding: 1px;
-  border-radius: 13px;
-
-  transition: transform 100ms ease;
-
-  background:
-    radial-gradient(
-      21.44% 86.72% at 100% 100%,
-      rgba(221, 221, 221, 0.4) 0%,
-      rgba(221, 221, 221, 0.4) 50%,
-      rgba(221, 221, 221, 0.1) 100%
-    ),
-    radial-gradient(
-      25.16% 101.75% at 0% 0%,
-      rgba(221, 221, 221, 0.4) 0%,
-      rgba(221, 221, 221, 0.4) 50%,
-      rgba(221, 221, 221, 0.1) 100%
-    );
+.button--glass {
+  border: .5px solid transparent;
+  border-radius: 12px;
+  isolation: isolate;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: #fdf7ec1f;
+  background-clip: padding-box;
 }
 
-.button__glass:has(.button:active) {
+.button--glass::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  padding: .5px;
+  border-radius: inherit;
+  background:
+    radial-gradient(
+      45% 65% at 12% 8%,
+      rgb(253 247 236 / .7) 0%,
+      rgb(253 247 236 / .32) 45%,
+      transparent 100%
+    ),
+    radial-gradient(
+      45% 65% at 88% 92%,
+      rgb(253 247 236 / .55) 0%,
+      rgb(253 247 236 / .25) 45%,
+      transparent 100%
+    ),
+    #fdf7ec1f;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.button--glass > .button__text {
+  position: relative;
+  z-index: 1;
+}
+
+.button--glass:active {
   transform: scale(0.95);
 }
 
@@ -1308,7 +1415,7 @@ a {
 @media (min-width: 900px) {
   .site-header {
     position: absolute;
-    z-index: 100;
+    z-index: 1000;
     top: 16px;
     left: 50%;
 

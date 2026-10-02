@@ -114,22 +114,26 @@ export default function PrivacyPage() {
 
       <main className="privacy-page__main">
         <article className="privacy-document">
-            <h1>Политика конфиденциальности</h1>
-            <p className="privacy-document__subtitle">Политика в отношении обработки персональных данных</p>
-            {sections.map(([title, text], index) => (
-              <Reveal key={title} y={14} delay={120 + index * 90}>
-                <section className="privacy-document__section">
-                  <h2>{title}</h2>
-                  {text.split("\n\n").map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </section>
-              </Reveal>
-            ))}
+          <Reveal y={14}>
+            <div className="privacy-document__intro">
+              <h1>Политика конфиденциальности</h1>
+              <p className="privacy-document__subtitle">Политика в отношении обработки персональных данных</p>
+            </div>
+          </Reveal>
+          {sections.map(([title, text], index) => (
+            <Reveal key={title} y={14} delay={120 + index * 90}>
+              <section className="privacy-document__section">
+                <h2>{title}</h2>
+                {text.split("\n\n").map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </section>
+            </Reveal>
+          ))}
         </article>
       </main>
 
-      <Reveal y={16}><Footer /></Reveal>
+      <Footer />
     </div>
   );
 }
