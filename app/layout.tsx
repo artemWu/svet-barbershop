@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import CookiePopup from "@/components/CookiePopup";
+import YandexMetrika from "@/components/YandexMetrika";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://svethair.ru/"),
@@ -56,6 +57,7 @@ export default function RootLayout({
       <body className="antialiased">
         {children}
         <CookiePopup />
+        <YandexMetrika />
       </body>
     </html>
   );

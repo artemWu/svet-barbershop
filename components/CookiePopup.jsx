@@ -18,6 +18,7 @@ export default function CookiePopup() {
 
   function acceptCookies() {
     window.localStorage.setItem(COOKIE_CONSENT_KEY, "accepted");
+    window.dispatchEvent(new Event("svet-cookie-accepted"));
     setIsVisible(false);
   }
 
